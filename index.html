@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link id="favicon" rel="icon" type="image/svg+xml" href="/favicon-idle.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft Image Evaluator</title>
+  <style>
+    /* Top dotted loader (Microsoft style) */
+    #top-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 4px;
+      z-index: 9999;
+    }
+
+    #top-loader span {
+      display: block;
+      width: 6px;
+      height: 6px;
+      background-color: #0078d4;
+      /* Microsoft blue */
+      border-radius: 50%;
+      animation: dot-bounce 1s infinite ease-in-out;
+    }
+
+    #top-loader span:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    #top-loader span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    #top-loader span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes dot-bounce {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+
+      40% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top loader -->
+  <div id="top-loader">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div id="root"></div>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
